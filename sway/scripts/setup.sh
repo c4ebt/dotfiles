@@ -16,25 +16,27 @@ sudo apt install -y \
     fonts-font-awesome \
     build-essential libpam0g-dev libxcb-xkb-dev \
     thunar thunar-archive-plugin thunar-volman file-roller \
-    neofetch vim git zip curl zsh xdg-utils
+    neofetch vim git zip curl zsh xdg-utils bat firefox-esr
 
 xdg-user-dirs-update
 
-
 ./ly_setup.sh
 ./alacritty_setup.sh
-./nwg-look.sh
+./nwg-look_setup.sh
 ./fonts_setup.sh
 ./swaylock_setup.sh
 
 mkdir ~/.config
 cp -r ../.config/alacritty ~/.config
 cp -r ../.config/sway ~/.config
-cp -r ../wofi ~/.config
+cp -r ../.config/wofi ~/.config
+cp -r ../.config/waybar ~/.config
 
 # install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 cp ../.config/zsh/c4e.zsh-theme ~/.oh-my-zsh/themes
 cp ../.config/zsh/.zshrc ~
+
+sudo apt remove xdg-desktop-portal
 
 ly
