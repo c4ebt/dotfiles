@@ -107,3 +107,5 @@ alias tmpf="mkdir /tmp/asdf; cd /tmp/asdf"
 alias copy="xclip -selection c"
 alias clip='f() { xclip -selection clipboard -t image/png -o > $1".png" };f'
 alias imv="imv-wayland"
+
+export PATH=$PATH:/usr/local/go/bin
