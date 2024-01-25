@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 sudo apt update
 
 sudo apt install -y \
@@ -41,5 +41,7 @@ cp ../img/guts.png ~/.config/backgrounds
 cp ../img/guts-lock.png ~/.config/backgrounds
 
 sudo apt remove xdg-desktop-portal
+
+mv start_sway.sh ~
 
 ly
