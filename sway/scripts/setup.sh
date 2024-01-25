@@ -3,7 +3,6 @@ sudo apt update
 
 sudo apt install -y \
     sway waybar swaybg \
-    meson libxkbcommon-dev libcairo2-dev scdoc \
     policykit-1-gnome network-manager network-manager-gnome \
     wayland-protocols xwayland \
     wofi \
