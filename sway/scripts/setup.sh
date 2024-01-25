@@ -7,7 +7,7 @@ sudo apt install -y \
     policykit-1-gnome network-manager network-manager-gnome \
     wayland-protocols xwayland \
     wofi \
-    grim slurp wl-cliplboard xclip imv \
+    grim slurp xclip imv \
     mako-notifier \
     libgtk-layer-shell-dev \
     xdg-desktop-portal-wlr \
