@@ -20,16 +20,21 @@ sudo apt install -y \
 
 xdg-user-dirs-update
 
-mkdir -p ~/.config/sway
-mkdir -p ~/.config/waybar
-
-cp /etc/sway/config ~/.config/sway
-cp /etc/xdg/waybar/* ~/.config/waybar
 
 ./ly_setup.sh
 ./alacritty_setup.sh
 ./nwg-look.sh
 ./fonts_setup.sh
 ./swaylock_setup.sh
+
+mkdir ~/.config
+cp -r ../.config/alacritty ~/.config
+cp -r ../.config/sway ~/.config
+cp -r ../wofi ~/.config
+
+# install oh-my-zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+cp ../.config/zsh/c4e.zsh-theme ~/.oh-my-zsh/themes
+cp ../.config/zsh/.zshrc ~
 
 ly
