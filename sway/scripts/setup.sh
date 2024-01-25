@@ -2,7 +2,8 @@
 sudo apt update
 
 sudo apt install -y \
-    sway waybar swaylock swayidle swaybg swayimg \
+    sway waybar swaybg \
+    meson libxkbcommon-dev libcairo2-dev scdoc \
     policykit-1-gnome network-manager network-manager-gnome \
     wayland-protocols xwayland \
     wofi \
@@ -14,7 +15,8 @@ sudo apt install -y \
     dex \
     fonts-font-awesome \
     build-essential libpam0g-dev libxcb-xkb-dev \
-    neofetch vim git zip curl zsh
+    thunar thunar-archive-plugin thunar-volman file-roller \
+    neofetch vim git zip curl zsh xdg-utils
 
 xdg-user-dirs-update
 
@@ -24,6 +26,10 @@ mkdir -p ~/.config/waybar
 cp /etc/sway/config ~/.config/sway
 cp /etc/xdg/waybar/* ~/.config/waybar
 
-# Ly setup
 ./ly_setup.sh
+./alacritty_setup.sh
+./nwg-look.sh
+./fonts_setup.sh
+./swaylock_setup.sh
+
 ly
