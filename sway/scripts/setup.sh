@@ -37,6 +37,10 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 cp ../.config/zsh/c4e.zsh-theme ~/.oh-my-zsh/themes
 cp ../.config/zsh/.zshrc ~
 
+mkdir ~/.config/backgrounds
+cp ../img/guts.png ~/.config/backgrounds
+cp ../img/guts-lock.png ~/.config/backgrounds
+
 sudo apt remove xdg-desktop-portal
 
 ly
