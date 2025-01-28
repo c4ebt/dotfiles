@@ -1,3 +1,4 @@
+#zmodload zsh/zprof
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -70,7 +71,8 @@ ZSH_THEME="c4e"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+zstyle ':omz:plugins:nvm' lazy yes
+plugins=(nvm)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -103,9 +105,21 @@ source $ZSH/oh-my-zsh.sh
 alias cat="batcat -p --paging=never"
 alias catn="/bin/cat"
 alias lines="batcat --paging=never"
-alias tmpf="mkdir /tmp/asdf; cd /tmp/asdf"
+alias tmpf="mkdir -p /tmp/asdf; cd /tmp/asdf"
 alias copy="xclip -selection c"
-alias clip='f() { xclip -selection clipboard -t image/png -o > $1".png" };f'
+# alias clip='f() { xclip -selection clipboard -t image/png -o > $1".png" };f'
+alias clip='f() { wl-paste > $1".png" };f'
 alias imv="imv-wayland"
+alias screenshare="wayvnc & vncviewer 127.0.0.1"
+alias restartnet="sudo systemctl restart networking" # https://wiki.debian.org/NetworkManager/iwd, man iwctl
+alias reconfnet="sudo wpa_cli -i wlp0s20f3 reconfigure"
+alias editnet="sudo nvim /etc/wpa_supplicant/wpa_supplicant.conf"
+alias zath="zathura"
+alias dis="disown"
+alias thun="thunar & disown"
 
-export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:/usr/local/go/bin:~/bin:$HOME/.rvm/bin:/usr/local/texlive/2024/bin/x86_64-linux
+
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+# source ~/.rvm/scripts/rvm

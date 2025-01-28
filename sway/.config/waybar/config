@@ -3,8 +3,7 @@
     "height": 30,
     "modules-left": ["sway/workspaces", "sway/scratchpad"],
     "modules-center": ["sway/window"],
-    "modules-right": ["tray", "network", "pulseaudio", "clock", "battery", "custom/lock", "custom/reboot", "custom/poweroff"],
-    // Modules configuration
+    "modules-right": ["tray", "custom/media", "network", "pulseaudio", "clock", "battery", "custom/lock", "custom/reboot", "custom/poweroff"],
 	"sway/workspaces": {
 		"disable-scroll": true,
 		"all-outputs": true,
@@ -26,25 +25,25 @@
 	},
 	"custom/lock": {
 		"format": "",
-		"on-click": "exec swaylock -i ~/.config/backgrounds/guts-lock.png --clock --indicator --indicator-x-position 953 --indicator-y-position 238 --fade-in 0.2 --effect-blur 4x5 --font 'UbuntuMono Nerd Font' --key-hl-color 594715 --line-color d4a140 --ring-color 000000 --inside-ver-color b3b2af --ring-ver-color b3b2af"
+		"on-click": "swaylock -i ~/.config/backgrounds/guts-lock.png --clock --indicator --indicator-x-position 1112 --indicator-y-position 360 --fade-in 0.2 --effect-blur 4x5 --font 'UbuntuMono Nerd Font' --key-hl-color 967414 --line-color d4a140 --ring-color 000000 --inside-ver-color b3b2af --ring-ver-color b3b2af; swaymsg reload"
 	},
 	"custom/reboot": {
 		"format": "",
-		"on-click": "exec swaynag -m '' -B 'Reboot' 'reboot' -f 'UbuntuMono Nerd Font' --background 0e0e18 --border-bottom 0e0e18 --button-border-size 1 --button-gap 3 --button-dismiss-gap 3 --button-margin-right 6"
+		"on-click": "swaynag -m '' -B 'Reboot' 'sudo reboot' -f 'UbuntuMono Nerd Font' --background 0e0e18 --border-bottom 0e0e18 --button-border-size 1 --button-gap 3 --button-dismiss-gap 3 --button-margin-right 6"
 	},
 	"custom/poweroff": {
 		"format": "",
-		"on-click": "exec swaynag -m '' -B 'Power off' 'poweroff' -f 'UbuntuMono Nerd Font' --background 0e0e18 --border-bottom 0e0e18 --button-border-size 1 --button-gap 3 --button-dismiss-gap 3 --button-margin-right 6"
+		"on-click": "swaynag -m '' -B 'Power off' 'poweroff' -f 'UbuntuMono Nerd Font' --background 0e0e18 --border-bottom 0e0e18 --button-border-size 1 --button-gap 3 --button-dismiss-gap 3 --button-margin-right 6"
 	},
 	"clock": {
-		"format": "󰅐 {:%I:%M %p}",
+		"format": "󰅐 {:%H:%M}",
         	"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         	"format-alt": "󰸗 {:%Y-%m-%d}"
 	},
 	"battery": {
         	"states": {
             		"warning": 30,
-            		"critical": 15,
+            		"critical": 15
         	},
         	"format": "{icon} {capacity}%",
         	"format-charging": "󰂄 {capacity}%",
@@ -54,7 +53,6 @@
         	"format-icons": ["󱊡", "󱊢", "󱊣"]
 	},
 	"tray": {
-        // "icon-size": 21,
         "spacing": 10
         },
 	"network": {
@@ -67,15 +65,21 @@
 	"pulseaudio": {
 		"format": "{icon}  {volume}%",
         	"format-muted": "󰖁 Muted",
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "", ""]
+		"format-icons": {
+		    "headphone": "",
+		    "hands-free": "",
+		    "headset": "",
+		    "phone": "",
+		    "portable": "",
+		    "car": "",
+		    "default": ["", "", ""]
+		},
+		"on-click": "pavucontrol"
         },
-        "on-click": "pavucontrol"
-    }
+        "custom/media": {
+                "format": "  {} ",
+                "max-length": 40,
+                "escape": true,
+                "exec": "$HOME/.config/waybar/mediaplayer.sh"
+	}
 }
