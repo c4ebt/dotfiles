@@ -9,7 +9,7 @@ sudo apt install -y \
     grim slurp xclip imv \
     mako-notifier \
     libgtk-layer-shell-dev \
-    xdg-desktop-portal-wlr \
+    pipewire pipewire-pulse xdg-desktop-portal xdg-desktop-portal-wlr \
     brightnessctl \
     dex \
     fonts-font-awesome \
@@ -40,7 +40,7 @@ mkdir ~/.config/backgrounds
 cp ../img/guts.png ~/.config/backgrounds
 cp ../img/guts-lock.png ~/.config/backgrounds
 
-sudo apt remove xdg-desktop-portal
+# sudo apt remove xdg-desktop-portal
 
 mv start_sway.sh ~
 
