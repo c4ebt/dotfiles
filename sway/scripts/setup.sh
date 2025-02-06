@@ -12,7 +12,7 @@ sudo apt install -y \
     pipewire pipewire-pulse xdg-desktop-portal xdg-desktop-portal-wlr \
     brightnessctl \
     dex \
-    fonts-font-awesome \
+    fonts-font-awesome fonts-dejavu fonts-noto-core fonts-noto-mono \
     build-essential libpam0g-dev libxcb-xkb-dev \
     thunar thunar-archive-plugin thunar-volman file-roller \
     neofetch vim git zip curl zsh xdg-utils bat firefox-esr
